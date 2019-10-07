@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Inputcompo from '../src/Inputcompo.jsx'
+
 function App() {
   const [count, setCount] = useState(0)
   return (
@@ -17,6 +19,7 @@ function App() {
         </Switch>
       </Router>
       <button onClick={() => { setCount(count + 1) }}>incre</button>
+      <Inputcompo />
     </div>
   );
 }
