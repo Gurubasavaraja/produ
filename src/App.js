@@ -24,7 +24,7 @@ function App() {
 const Home = () => {
   return (
     <div>
-      <p>home</p>
+      <p>homeGuru</p>
     </div>
   );
 };
