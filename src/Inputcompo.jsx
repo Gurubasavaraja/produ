@@ -4,6 +4,7 @@ import { Container, Row, Col } from 'react-bootstrap'
 
 const Inputcompo = () => {
     const [data, setData] = useState({})
+    const [colordata, setColor] = useState({ colo: "green" })
     let change = (e) => {
         setData({ ...data, [e.target.name]: e.target.value })
     }
@@ -29,14 +30,15 @@ const Inputcompo = () => {
             {data.name}
             {data.pass}
             {data.lastName}
-
+            {colordata.colo}
+            trail:<input type="color" value={colordata} name="colo" onChange={(e) => { setColor({ [e.target.name]: e.target.value }) }} />
             <Container fluid>
                 <Row>
                     <Col id="ani" style={{ backgroundColor: "white", minHeight: "100px", position: "absolute", width: "100px", zIndex: "6", transform: "translateX(-60px)", transition: "all 0.3s linear", margin: "0px", padding: "0px" }}>
                         <button style={{ padding: "0px", float: "right" }} id="show" onClick={animate}>show</button>
                         <button id="off" style={{ display: "none", padding: "0px", float: "right" }} onClick={animateOff}>off</button>
                     </Col>
-                    <Col md="6" style={{ backgroundColor: "green", minHeight: "100px" }}>
+                    <Col md="6" style={{ backgroundColor: `${colordata.colo}`, minHeight: "100px" }}>
                         s
                     </Col>
                     <Col md="6" style={{ backgroundColor: "blue", minHeight: "100px" }}>
